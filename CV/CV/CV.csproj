@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot - Copy\**" />
+    <Content Remove="wwwroot - Copy\**" />
+    <EmbeddedResource Remove="wwwroot - Copy\**" />
+    <None Remove="wwwroot - Copy\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>

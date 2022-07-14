@@ -7,7 +7,8 @@
     background-image: repeating-linear-gradient(90deg,#009eff,#00f38d);
 }
 
-.main-body{
+.main-body {
+    background-image: repeating-linear-gradient(90deg,#009eff,#00f38d);
 }
 html {
     font-size: 14px;

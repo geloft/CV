@@ -1,25 +1,19 @@
-﻿* {
-    margin 0;
-    padding 0;
-}
-
-footer {
+﻿footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    background-image: repeating-linear-gradient(90deg,MediumSpringGreen,DodgerBlue);
+    height: 25px;
+    background-image: repeating-linear-gradient(90deg,#009eff,#00f38d);
 }
 
+.main-body{
+}
 html {
     font-size: 14px;
 }
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
 html {
-    position: relative;
     min-height: 100%;
 }
 
@@ -29,5 +23,9 @@ body {
 }
 
 .background-main {
-    background-image: repeating-linear-gradient(50deg,DodgerBlue,MediumSpringGreen);
+    background-image: repeating-linear-gradient(90deg,#00f38d,#009eff);
+}
+
+.background-nav {
+    background-image: repeating-linear-gradient(90deg,#009eff,#00f38d);
 }

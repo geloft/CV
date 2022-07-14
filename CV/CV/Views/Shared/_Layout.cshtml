@@ -9,17 +9,37 @@
 </head>
 <body>
     <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 background-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="img/user.png" width="40" height="40" alt="Sample Photo" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" asp-area="" asp-controller="" asp-action="AboutMe"><h3>About me</h3></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" asp-area="" asp-controller="" asp-action="CV"><h3>CV</h3></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" asp-area="" asp-controller="" asp-action="ContacMe"><h3>Contact me</h3></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-    <div class="p-3 bg-dark text-white background-main">
         <div class="container">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
         </div>
-    </div>
-    <footer>
+    <footer class="footer">
         <div class="container">
-           <b>&copy; 2022 - Created by Hryhoriy Kutyanskiy - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></b>
+            <h6 class="text-white mt-1">&copy; 2022 - Created by Hryhoriy K. - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></h6>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>

@@ -1,0 +1,32 @@
+﻿footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    background-image: repeating-linear-gradient(90deg,#009eff,#00f38d);
+}
+
+.main-body {
+    background-image: repeating-linear-gradient(90deg,#009eff,#00f38d);
+}
+html {
+    font-size: 14px;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.background-main {
+    background-image: repeating-linear-gradient(90deg,#00f38d,#009eff);
+}
+
+.background-nav {
+    background-image: repeating-linear-gradient(90deg,#009eff,#00f38d);
+}

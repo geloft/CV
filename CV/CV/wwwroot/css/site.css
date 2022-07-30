@@ -30,3 +30,23 @@ body {
 .background-nav {
     background-image: repeating-linear-gradient(90deg,#009eff,#00f38d);
 }
+
+.hero-cv {
+    background-image: repeating-linear-gradient(90deg,#009eff,#00f38d);
+    border-radius: 62% 38% 64% 36% / 55% 30% 70% 45%;
+    max-height: 350px;
+}
+
+hr {
+    background-image: linear-gradient(90deg, #009eff, #00f38d);
+    height: 8px;
+    border: 0;
+}
+
+@if $enable-transitions {
+    @keyframes progress-bar-stripes {
+        0% {
+            background-position-x: $progress-height;
+        }
+    }
+}

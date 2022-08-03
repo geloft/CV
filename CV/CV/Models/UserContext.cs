@@ -8,10 +8,6 @@ namespace CV.Models
         {
 
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyCV-DB;Trusted_Connection=True");
-        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()

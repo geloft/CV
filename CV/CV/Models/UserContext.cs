@@ -5,7 +5,7 @@ namespace CV.Models
 {
     public class UserContext : DbContext
     {
-        public UserContext() : base()
+        public UserContext(DbContextOptions options) : base(options)
         {
 
         }

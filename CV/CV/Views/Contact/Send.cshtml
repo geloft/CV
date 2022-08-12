@@ -1,0 +1,14 @@
+﻿@model CV.Models.ViewModels.ContactViewModel
+
+@{
+    ViewData["Title"] = "Message";
+}
+
+<div class="container">
+        <h1 class="text-start ms-3 mt-4"><b> Thank for you message </b></h1>
+        <hr style="width:35%;" />
+         <h2 class="text-body">@Model.FirstName @Model.LastName</h2>
+         <h3 class="text-body">Email: @Model.Email </h3>
+         <h3 class="text-body mt-3">Message text: @Model.Text</h3>
+          <a class="link-dark" asp-area="" asp-controller="Home" asp-action="CV"><h4 class="mt-5">Back to CV</h4></a>
+</div>

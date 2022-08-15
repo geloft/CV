@@ -8,8 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-builder.Services.AddFluentValidation();
-builder.Services.AddTransient<IValidator<ContactViewModel>, ContactViewModelValidator>();
+builder.Services.AddFluentValidation(fv =>
+{
+    fv.RegisterValidatorsFromAssemblyContaining<ContactViewModelValidator>();
+});
 
 builder.Services.AddDbContext<CV.Models.UserContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

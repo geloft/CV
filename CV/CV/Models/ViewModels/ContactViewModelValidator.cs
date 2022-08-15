@@ -26,7 +26,7 @@ namespace CV.Models.ViewModels
 
             RuleFor(x => x.Text)
                 .Length(15, 250)
-                .WithMessage("Text must be between 15 to 250 words");
+                .WithMessage("Text must be between 15 to 250 chars");
         }
     }
 }

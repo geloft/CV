@@ -21,23 +21,24 @@ namespace CV.Controllers
         [HttpPost]
         public IActionResult Contact(ContactViewModel model)
         {
+            var user = new User { FirstName = model.FirstName, LastName = model.LastName, Email = model.Email };
             if (ModelState.IsValid)
             {
-                if (_context.Users.Where(x => x.Email == model.Email).Count() == 0)
+                if (_context.Users.Where(x => x.Email == user.Email).FirstOrDefault() == null)
                 {
-                    _context.Users.Add(new User() { Email = model.Email, FirstName = model.FirstName, LastName = model.LastName });
-                    _context.SaveChanges();
-                    _context.Messages.Add(new Message() { Text = model.Text, UserID = _context.Users.ToList().Last().UserID });
-                    _context.SaveChanges();
-                    return View("Send", model);
+                    _context.Users.Add(user);
                 }
                 else
                 {
-                    _context.Messages.Add(new Message() { Text = model.Text, UserID = _context.Users.Where(x => x.Email == model.Email).First().UserID });
-                    _context.SaveChanges();
-                    return View("Send", model);
+                    user = _context.Users.Where(x => x.Email == user.Email).FirstOrDefault();
+                    user.FirstName = model.FirstName;
+                    user.LastName = model.LastName;
+                    _context.Entry(user).State = Microsoft.EntityFrameworkCore.EntityState.Modified;                    
                 }
-            }
+                _context.Messages.Add(new Message() { Text = model.Text, User = user });
+                _context.SaveChanges();
+                return View("Send", model);
+            }          
             return View();
         }
 

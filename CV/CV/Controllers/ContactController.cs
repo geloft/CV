@@ -21,11 +21,12 @@ namespace CV.Controllers
         [HttpPost]
         public IActionResult Contact(ContactViewModel model)
         {
-            var user = _context.Users.Where(x => x.Email == model.Email).FirstOrDefault();
             if (!ModelState.IsValid)
             {
                 return View();
             }
+
+            var user = _context.Users.Where(x => x.Email == model.Email).FirstOrDefault();
             if (user == null)
             {
                 _context.Users.Add(new User { FirstName = model.FirstName, LastName = model.LastName, Email = model.Email });

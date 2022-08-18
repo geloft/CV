@@ -81,3 +81,11 @@ hr {
         border-radius: 37% 63% 32% 68% / 27% 72% 28% 73%;
     }
 }
+
+.div-contact-me-input {
+    max-width: 20%;
+}
+
+.div-contact-me-textarea {
+    max-width: 50%;
+}

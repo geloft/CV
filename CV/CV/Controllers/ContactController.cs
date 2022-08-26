@@ -29,7 +29,7 @@ namespace CV.Controllers
             var user = _context.Users.Where(x => x.Email == model.Email).FirstOrDefault();
             if (user == null)
             {
-                _context.Users.Add(new User { FirstName = model.FirstName, LastName = model.LastName, Email = model.Email });
+                _context.Users.Add(user = new User { FirstName = model.FirstName, LastName = model.LastName, Email = model.Email });
             }
             else
             {

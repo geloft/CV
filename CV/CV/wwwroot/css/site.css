@@ -83,9 +83,9 @@ hr {
 }
 
 .div-contact-me-input {
-    max-width: 20%;
+    max-width: 250px;
 }
 
 .div-contact-me-textarea {
-    max-width: 50%;
+    max-width: 400px;
 }

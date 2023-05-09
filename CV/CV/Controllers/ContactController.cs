@@ -13,11 +13,13 @@ namespace CV.Controllers
         {
             _context = context;
         }
+
         [HttpGet]
         public IActionResult Contact()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Contact(ContactViewModel model)
         {

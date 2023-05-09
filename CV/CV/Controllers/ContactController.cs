@@ -26,7 +26,7 @@ namespace CV.Controllers
                 return View();
             }
 
-            var user = _context.Users.Where(x => x.Email == model.Email).FirstOrDefault();
+            var user = _context.Users.FirstOrDefault(x => x.Email == model.Email);
             if (user == null)
             {
                 _context.Users.Add(user = new User { FirstName = model.FirstName, LastName = model.LastName, Email = model.Email });

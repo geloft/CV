@@ -2,16 +2,19 @@
 using CV.Models;
 using CV.Models.ViewModels;
 using CV.Models.DB.Entities;
+using CV.Services;
 
 namespace CV.Controllers
 {
     public class ContactController : Controller
     {
         private readonly UserContext _context;
+        private readonly IEmailSender _emailSender;
 
-        public ContactController(UserContext context)
+        public ContactController(UserContext context, IEmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender;
         }
         [HttpGet]
         public IActionResult Contact()
@@ -19,7 +22,7 @@ namespace CV.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Contact(ContactViewModel model)
+        public async Task<IActionResult> Contact(ContactViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -38,6 +41,12 @@ namespace CV.Controllers
             }
             _context.Messages.Add(new Message() { Text = model.Text, User = user });
             _context.SaveChanges();
+
+            string email = "grisha.kutyanski@gmail.com";
+            string subject = "Сповіщення з сайту MyCV";
+            string message = $"З вами хоче зв'язатись {model.FirstName} {model.LastName}\nEmail: {model.Email} \nТекст повідомлення: {model.Text}";
+            await _emailSender.SendEmailAsync(email, subject, message);
+
             return View("Send", model);
         }
 
